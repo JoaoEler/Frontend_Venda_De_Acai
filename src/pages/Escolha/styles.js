@@ -33,3 +33,35 @@ export const Content = styled.div`
   max-height: 1000px;
   margin-bottom: -50px;
 `;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  margin-top: 550px;
+  &:hover {
+      background-color: #999;
+      color: #999;
+    }
+  > button {
+    margin-top: 20px;
+    margin-right: 75px;
+    margin-left: 75px;
+  }
+`;
+
+export const Text = styled.h1`
+  color: #7b1fa2;
+  display: flex;
+  align-items: flex-start;
+  place-content: initial;
+  justify-content: center;
+`;
+
+export const Title = styled.h1`
+  color: #7b1fa2;
+  display: flex;
+  align-items: center;
+  place-content: center;
+  justify-content: center;
+`;
