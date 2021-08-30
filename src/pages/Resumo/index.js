@@ -51,7 +51,7 @@ const Escolha = () => {
               <Text className="final1">Valor total: R$ {pedido.acai.tamanho === 'Medio' ? 12 : (pedido.acai.tamanho === 'Pequeno' ? 10 : (pedido.acai.tamanho === 'Grande' ? 15 : '')) + (pedido.custom ? 3 : 0)}.00 </Text>
             </Selection>
             <Selection>
-              <Text className="final2">Tempo de preparo: {pedido.acai.tamanho === 'Medio' ? 7 : (pedido.acai.tamanho === 'Pequeno' ? 5 : (pedido.acai.tamanho === 'Grande' ? 9 : ''))} </Text>
+              <Text className="final2">Tempo de preparo: {pedido.acai.tamanho === 'Medio' ? 7 : (pedido.acai.tamanho === 'Pequeno' ? 5 : (pedido.acai.tamanho === 'Grande' ? 9 : ''))}min </Text>
             </Selection>
           <button type='button' className="next" onClick={() => history.push("/")}>Refazer pedido</button>
         </Content>
