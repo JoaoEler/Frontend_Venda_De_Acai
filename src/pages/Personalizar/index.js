@@ -49,7 +49,7 @@ const Personalizar = () => {
           </Selection>
 
           <button type='button' className="next" onClick={() => history.push({
-  pathname: '/personalizar',
+  pathname: '/finalizar',
   search: '?data',
   state: data,
 }) }>Finalizar pedido</button>

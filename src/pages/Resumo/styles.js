@@ -14,6 +14,14 @@ export const Container = styled.div`
     transition: color 0.2s;
   }
 
+  .final1{
+    margin-bottom: 0px;
+  }
+  .final2{
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
+
   button {
     margin:15px 0;
     width: 155px;
@@ -39,14 +47,19 @@ export const Container = styled.div`
       color: #fff;
     }
 
+  .selectedt{
+      background-color: #999;
+      color: #fff;
+    }
+
   .next{
     align-self: flex-end;
     margin-bottom: 5px;
     margin-top: 10px;
-    width: 125px;
+    width: 110px;
     margin-right: 15px;
-    height: 30px;
-    font-size: 13px;
+    height: 35px;
+    font-size: 14px;
     background: #fff;
     border-radius: 5px;
     border: 2px solid #4a148c;
@@ -78,18 +91,22 @@ export const Content = styled.div`
   width: 100%;
   max-width: 550px;
   height: 100%;
-  max-height: 225px;
+  max-height: 400px;
   margin-bottom: -50px;
 `;
 
-export const ButtonContainer = styled.div`
+export const TextContainer = styled.div`
   display: flex;
   justify-content: space-between;
 
   margin-top: 10px;
-  > button {
-    margin-right: 15px;
-    margin-left: 15px;
+
+  div{
+    font-size: 12px;
+    font-weight: 400;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 20px;
   }
 `;
 

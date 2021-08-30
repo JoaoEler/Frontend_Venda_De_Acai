@@ -3,11 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import escolha from '../pages/Escolha';
 import personalize from '../pages/Personalizar';
-//import resumo from '../pages/Resumo';
-
-
-
-//<Route path="/finalizar" exact component={resumo} />
+import resumo from '../pages/Resumo';
 
 const Routes = () => {
   return (
@@ -16,7 +12,7 @@ const Routes = () => {
         <Route path="/" exact component={escolha} />
 
         <Route path="/personalizar" exact component={personalize} />
-
+        <Route path="/finalizar" exact component={resumo} />
       </Switch>
     </>
   );
