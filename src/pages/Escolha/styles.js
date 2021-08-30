@@ -17,51 +17,89 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   display: flex;
-  align-items: center;
+  box-shadow: 1px 1px 5px 2px;
+  border-radius: 5px;
+  background-color: #fff;
   flex-direction: column;
-  justify-content: center;
   a {
     margin-left: 800px;
-    margin-top: -20px;
+    margin-top: -200px;
     text-decoration: none;
-    color: #fff;
-    transition: color 0.2s;
+    color: #7b1fa2;
   }
   width: 100%;
-  max-width: 900px;
+  max-width: 550px;
   height: 100%;
-  max-height: 1000px;
+  max-height: 325px;
   margin-bottom: -50px;
 `;
 
 export const ButtonContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  position: absolute;
-  margin-top: 550px;
-  &:hover {
-      background-color: #999;
-      color: #999;
-    }
+
+  margin-top: 10px;
   > button {
-    margin-top: 20px;
-    margin-right: 75px;
-    margin-left: 75px;
+    margin-right: 15px;
+    margin-left: 15px;
   }
 `;
 
 export const Text = styled.h1`
-  color: #7b1fa2;
+  color: #4a148c;
+  margin-top: 10px;
+  margin-left: 20px;
   display: flex;
   align-items: flex-start;
   place-content: initial;
-  justify-content: center;
+  justify-content: flex-start;
+  font-size: 13px;
+  font-weight: 600;
 `;
 
 export const Title = styled.h1`
-  color: #7b1fa2;
+  color: #4a148c;
+  font-size: 18px;
+  margin-top: 20px;
+  font-weight: bold;
   display: flex;
   align-items: center;
   place-content: center;
   justify-content: center;
+`;
+
+export const TitleBox = styled.div`
+  flex-direction: row;
+
+  align-content: flex-start;
+  justify-content: left;
+  align-items: flex-start;
+`;
+
+export const Selection = styled.div`
+  justify-content: center;
+`;
+
+export const ButtonNext = styled.button`
+    align-self: flex-end;
+    //margin:15px 0;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    width: 110px;
+    margin-right: 10px;
+    height: 35px;
+    font-size: 14px;
+    background: #fff;
+    border-radius: 5px;
+    border: 2px solid #4a148c;
+    outline:none;
+    -webkit-font-smoothing: antialiased;
+    color: #4a148c;
+    font-weight: 600;
+
+    &:hover {
+    background-color: #4a148c;
+    color: #fff;
+    font-weight: 400;
+  }
 `;

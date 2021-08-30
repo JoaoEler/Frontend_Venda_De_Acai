@@ -1,15 +1,17 @@
 import React, { useState, useCallback } from 'react';
-//import { Link } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 import api from '../../services/api';
 
-import { Container, Content, Text, Title, ButtonContainer } from './styles';
+import { Container, Content, Text, Title, ButtonContainer, TitleBox, Selection, ButtonNext } from './styles';
 
 import Button from '../../components/Button';
 
 const Escolha = () => {
   const [sabor, setSabor] = useState('');
   const [tamanho, setTamanho] = useState('');
+
+  const history = useHistory();
 
   const handleSabor = useCallback((sabor) => {
     setSabor(sabor);
@@ -23,23 +25,29 @@ const Escolha = () => {
     <>
       <Container>
         <Content>
-          <Title>Escolha seu açaí</Title>
-          <Text>SABOR:</Text>
-          <ButtonContainer>
-            <Button type='button' onClick={() => handleSabor("Morango")} >Morango</Button>
-            <Button type='button' onClick={() => handleSabor("Banana")}>Banana</Button>
-            <Button type='button' onClick={() => handleSabor("Kiwi")}>Kiwi</Button>
-          </ButtonContainer>
+          <TitleBox>
+            <Title>Escolha seu açaí</Title>
+          </TitleBox>
 
-          <Text>TAMANHO:</Text>
+          <Selection>
+            <Text>SABOR:</Text>
+              <ButtonContainer>
+                <Button type='button' onClick={() => handleSabor('Morango')} >Morango</Button>
+                <Button type='button' onClick={() => handleSabor('Banana')}>Banana</Button>
+                <Button type='button' onClick={() => handleSabor('Kiwi')}>Kiwi</Button>
+              </ButtonContainer>
+          </Selection>
 
-          <ButtonContainer>
-            <Button type='button' onClick={() => handleTamanho("Pequeno")}>Pequeno (300ml)</Button>
-            <Button type='button' onClick={() => handleSabor("Medio")}>Médio (500ml)</Button>
-            <Button type='button' onClick={() => handleSabor("Grande")}>Grande (700ml)</Button>
-          </ButtonContainer>
+          <Selection>
+            <Text>TAMANHO:</Text>
+            <ButtonContainer>
+              <Button type='button' onClick={() => handleTamanho('Pequeno')}>Pequeno (300ml)</Button>
+              <Button type='button' onClick={() => handleSabor('Medio')}>Médio (500ml)</Button>
+              <Button type='button' onClick={() => handleSabor('Grande')}>Grande (700ml)</Button>
+            </ButtonContainer>
+          </Selection>
 
-          <Button type='button' onClick={() => handleSabor("Grande")}>Avançar</Button>
+          <ButtonNext type='button' onClick={() => handleSabor('Grande')}>Avançar</ButtonNext>
         </Content>
       </Container>
     </>
