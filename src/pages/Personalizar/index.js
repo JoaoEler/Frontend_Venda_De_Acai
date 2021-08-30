@@ -43,7 +43,7 @@ const Personalizar = () => {
             <Text>PERSONALIZAÇÃO:</Text>
               <ButtonContainer>
                 <button type='button' onClick={() => {handleCustom('Granola')}} id="Granola" >Granola</button>
-                <button type='button' onClick={() => {handleCustom('Paçoca')}} id="Paçoca" >Pacoça</button>
+                <button type='button' onClick={() => {handleCustom('Paçoca')}} id="Paçoca" >Paçoca</button>
                 <button type='button' onClick={() => {handleCustom('Leite ninho')}} id="Leite ninho" >Leite ninho</button>
               </ButtonContainer>
           </Selection>
