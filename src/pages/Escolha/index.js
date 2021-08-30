@@ -1,11 +1,9 @@
 import React, { useState, useCallback } from 'react';
-import { useHistory, Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
-import api from '../../services/api';
+//import api from '../../services/api';
 
-import { Container, Content, Text, Title, ButtonContainer, TitleBox, Selection, ButtonNext } from './styles';
-
-import Button from '../../components/Button';
+import { Container, Content, Text, Title, ButtonContainer, TitleBox, Selection } from './styles';
 
 const Escolha = () => {
   const [sabor, setSabor] = useState('');
@@ -14,11 +12,29 @@ const Escolha = () => {
   const history = useHistory();
 
   const handleSabor = useCallback((sabor) => {
+    if(document.querySelector('.selected')){
+      document.querySelector('.selected').removeAttribute('class');
+    }
     setSabor(sabor);
+    const btn = document.getElementById(sabor);
+    if(btn.getAttribute("class")){
+      btn.removeAttribute("class");
+    } else{
+      btn.setAttribute("class", 'selected');
+    }
   }, []);
 
   const handleTamanho = useCallback((tamanho) => {
+    if(document.querySelector('.selectedt')){
+      document.querySelector('.selectedt').removeAttribute('class');
+    }
     setTamanho(tamanho);
+    const btn = document.getElementById(tamanho);
+    if(btn.getAttribute("class")){
+      btn.removeAttribute("class");
+    } else{
+      btn.setAttribute("class", 'selectedt');
+    }
   }, []);
 
   return(
@@ -32,22 +48,22 @@ const Escolha = () => {
           <Selection>
             <Text>SABOR:</Text>
               <ButtonContainer>
-                <Button type='button' onClick={() => handleSabor('Morango')} >Morango</Button>
-                <Button type='button' onClick={() => handleSabor('Banana')}>Banana</Button>
-                <Button type='button' onClick={() => handleSabor('Kiwi')}>Kiwi</Button>
+                <button type='button' onClick={() => {handleSabor('Morango')}} id="Morango" >Morango</button>
+                <button type='button' onClick={() => {handleSabor('Banana')}} id="Banana" >Banana</button>
+                <button type='button' onClick={() => {handleSabor('Kiwi')}} id="Kiwi" >Kiwi</button>
               </ButtonContainer>
           </Selection>
 
           <Selection>
             <Text>TAMANHO:</Text>
             <ButtonContainer>
-              <Button type='button' onClick={() => handleTamanho('Pequeno')}>Pequeno (300ml)</Button>
-              <Button type='button' onClick={() => handleSabor('Medio')}>Médio (500ml)</Button>
-              <Button type='button' onClick={() => handleSabor('Grande')}>Grande (700ml)</Button>
+              <button type='button' onClick={() => handleTamanho('Pequeno')} id="Pequeno" >Pequeno (300ml)</button>
+              <button type='button' onClick={() => handleTamanho('Medio')} id="Medio" >Médio (500ml)</button>
+              <button type='button' onClick={() => handleTamanho('Grande')} id="Grande" >Grande (700ml)</button>
             </ButtonContainer>
           </Selection>
 
-          <ButtonNext type='button' onClick={() => handleSabor('Grande')}>Avançar</ButtonNext>
+          <button type='button' className="next" onClick={() => history.push("/personalizar", { sabor: sabor, tamanho: tamanho})}>Avançar</button>
         </Content>
       </Container>
     </>

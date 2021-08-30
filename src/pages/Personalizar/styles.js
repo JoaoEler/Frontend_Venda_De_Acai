@@ -48,10 +48,10 @@ export const Container = styled.div`
     align-self: flex-end;
     margin-bottom: 5px;
     margin-top: 10px;
-    width: 110px;
+    width: 125px;
     margin-right: 15px;
-    height: 35px;
-    font-size: 14px;
+    height: 30px;
+    font-size: 13px;
     background: #fff;
     border-radius: 5px;
     border: 2px solid #4a148c;
@@ -83,7 +83,7 @@ export const Content = styled.div`
   width: 100%;
   max-width: 550px;
   height: 100%;
-  max-height: 325px;
+  max-height: 225px;
   margin-bottom: -50px;
 `;
 
